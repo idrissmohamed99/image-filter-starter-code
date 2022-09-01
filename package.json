@@ -30,9 +30,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jimp": "^0.16.1",
+    "jimp": "^0.16.0",
     "lodash": "^4.17.15",
-    "rimraf": "^3.0.2",
-    "sharp": "^0.30.7"
+    "rimraf": "^3.0.2"
   }
 }
