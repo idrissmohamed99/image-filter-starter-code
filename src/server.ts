@@ -31,11 +31,14 @@ import { Application, Request, Response, NextFunction, Errback } from 'express'
   /**************************************************************************** */
   app.get("/filteredImage", async (req: Request, res: Response, next: NextFunction) => {
     try {
+
+
       let { image_url } = req.query;
       if (!image_url) {
         return res.status(400).send('name can not be blank');
       }
       let image: string = await filterImageFromURL(image_url) as string;
+      // check if result is not empty
       if (image != null || image != undefined) {
         res.status(200)
           .sendFile(image, async function () { await deleteLocalFiles([image]) });
